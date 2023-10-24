@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-  long long int n;
-  cin >> n;
+  long long n;
+  scanf("%lld", &n);
 
   while (n > 1)
   {
-    cout << n << " ";
+    printf("%lld ", n);
 
     if (n & 1) 
       n = (n * 3) + 1;
@@ -17,5 +17,5 @@ int main()
       n >>= 1; 
   }
 
-  cout << n << endl;
+  printf("%lld\n", n);
 }
