@@ -6,13 +6,13 @@ using namespace std;
 int main()
 {
   string s;
-  cin >> s;
+  getline(cin, s);
 
   long long m{-1}, c{1};
   long long n = s.size();
 
   if (n == 1) {
-    cout << 1 << endl;
+    printf("1\n");
     return 0;
   }
 
@@ -26,5 +26,5 @@ int main()
     m = (c > m) ? c : m;
   }
 
-  cout << m << endl;
+  printf("%lld\n", m);
 }
