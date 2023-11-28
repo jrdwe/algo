@@ -17,31 +17,20 @@ int main()
 	ll n;
 	cin >> n;
   
-	vector<tuple<ll,ll,ll>> swaps;
+	vector<ll> pos(3);
+	for (ll i{}; i < 3; i++)
+		pos[i] = i;
 
-	ll a{}, b{}, g{};
-	for (ll i{0}; i < n; i++) {	
+	vector<ll> cnt(3);
+	for (ll i{}; i < n; i++) {	
+		ll a, b, g;
 		cin >> a >> b >> g;
-		swaps.push_back({a, b, g});
 
+		a--, b--, g--; // ensure indices are valid 
+
+		swap(pos[a], pos[b]);
+		cnt[pos[g]]++;	
 	}
 
-	ll m{};
-	for (ll i{}; i < 3; i++) {
-		vector<ll> vec(3);
-		vec[i] = 1; // the simulation for ith round
-
-		ll q{}, w{}, e{}, c{};
-		for (ll j{}; j < n; j++) {
-			tie(q, w, e) = swaps[j];
-			swap(vec[q - 1], vec[w - 1]);
-
-			if (vec[e - 1] == 1)
-				c += 1;
-		}
-
-		m = max(m, c);
-	}
-
-	cout << m << "\n";
+	cout << max({cnt[0], cnt[1], cnt[2]}) << "\n"; // requires tuple
 }
