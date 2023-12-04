@@ -5,6 +5,9 @@ typedef long long ll;
 
 using namespace std;
 
+#define BUCKETS 3
+#define CYCLES 4
+
 void setio(string s) {
 	freopen((s + ".in").c_str(), "r", stdin);
 	freopen((s + ".out").c_str(), "w", stdout);
@@ -17,39 +20,17 @@ int main()
 	ll c1, m1, c2, m2, c3, m3;
   cin >> c1 >> m1 >> c2 >> m2 >> c3 >> m3;
 
-	if (m1 + m2 > c2) {
-		m1 = m1 + m2 - c2;
-		m2 = c2;
-	} else {
-		m2 += m1;
-		m1 = 0;
-	}
+	vector<ll> cap{c1, c2, c3};
+	vector<ll> vol{m1, m2, m3};
 
-	if (m2 + m3 > c3) {
-		m2 = m2 + m3 - c3;
-		m3 = c3;
-	} else {
-		m3 += m2;
-		m2 = 0;
-	}
+	for (ll i{}; i < CYCLES; i++) {
+		ll k{i % BUCKETS}, j{(i + 1) % BUCKETS};
 
-	if (m1 + m3 > c1) {
-		m3 = m3 + m1 - c1;
-		m1 = c1;
-	} else {
-		m1 += m3;
-		m3 = 0;
+		ll q = min(vol[k], cap[j] - vol[j]);
+		
+		vol[k] -= q;
+		vol[j] += q;
 	}
-
-	if (m1 + m2 > c2) {
-		m1 = m1 + m2 - c2;
-		m2 = c2;
-	} else {
-		m2 += m1;
-		m1 = 0;
-	}
-
-	cout << m1 << endl;
-	cout << m2 << endl;
-	cout << m3 << endl;
+	
+	for (auto i : vol) { cout << i << "\n"; }
 }
