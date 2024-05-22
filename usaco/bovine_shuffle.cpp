@@ -1,17 +1,17 @@
-#include <bits/stdc++.h>
-#include <cstdio>
-
-typedef long long ll;
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
+
+#define ll long long
 
 void setio(string st) {
 	freopen((st + ".in").c_str(), "r", stdin);
 	freopen((st + ".out").c_str(), "w", stdout);
 }
 
-int main()
-{
+int main() {
   setio("shuffle");
 
 	ll n;

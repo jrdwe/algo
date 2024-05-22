@@ -1,3 +1,3 @@
-Cp is a repository for my competitive programming problem attempts.
+Algo is a repository for my algorithm programming problem attempts.
 
 All feedback is welcome. 

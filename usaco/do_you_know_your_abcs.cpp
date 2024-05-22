@@ -1,16 +1,17 @@
-#include <bits/stdc++.h>
-
-typedef long long ll;
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
+
+#define ll long long
 
 void setio(string s) {
 	freopen((s + ".in").c_str(), "r", stdin);
 	freopen((s + ".out").c_str(), "w", stdout);
 }
 
-int main()
-{
+int main() {
   vector<ll> v;
 
   for (ll i{0}, k{0}; i < 7; i++) {

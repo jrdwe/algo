@@ -1,9 +1,13 @@
-#include <bits/stdc++.h>
-#include <cstdio>
-
-typedef long long ll;
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <set>
 
 using namespace std;
+
+#define INF 1000000010
+#define ll long long
 
 #define WORSTCASE 15
 
@@ -12,8 +16,7 @@ void setio(string st) {
 	freopen((st + ".out").c_str(), "w", stdout);
 }
 
-int main()
-{
+int main() {
   setio("lostcow");
 
 	ll x, y;

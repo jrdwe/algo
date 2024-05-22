@@ -1,17 +1,20 @@
-#include <bits/stdc++.h>
-#include <cstdio>
-
-typedef long long ll;
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+#include <set>
 
 using namespace std;
+
+#define INF 1000000010
+#define ll long long
 
 void setio(string s) {
 	freopen((s + ".in").c_str(), "r", stdin);
 	freopen((s + ".out").c_str(), "w", stdout);
 }
 
-int main()
-{
+int main() {
   setio("teleport");
   
   ll a, b, x, y;
