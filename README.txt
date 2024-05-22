@@ -1,3 +1,3 @@
-Algo is a repository for my algorithm programming problem attempts.
+algo is a repository to store my competitive programming problems.
 
-All feedback is welcome. 
+all feedback is welcome. 
